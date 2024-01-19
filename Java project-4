@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class TextAdventureGame {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to the Adventure Game!");
+        System.out.println("You find yourself at a crossroad. Which path will you choose? (1/2)");
+
+        int choice = scanner.nextInt();
+
+        if (choice == 1) {
+            System.out.println("You chose Path 1. You encounter a friendly creature.");
+            System.out.println("What will you do? (A/B)");
+            char action = scanner.next().charAt(0);
+
+            if (action == 'A') {
+                System.out.println("You befriended the creature. Victory!");
+            } else if (action == 'B') {
+                System.out.println("The creature was offended. It's game over!");
+            } else {
+                System.out.println("Invalid input. Game over!");
+            }
+
+        } else if (choice == 2) {
+            System.out.println("You chose Path 2. You stumble upon a mysterious door.");
+            System.out.println("Do you want to open it? (Y/N)");
+            char decision = scanner.next().charAt(0);
+
+            if (decision == 'Y') {
+                System.out.println("You opened the door and found a treasure. Congratulations!");
+            } else if (decision == 'N') {
+                System.out.println("You decided not to open the door. The adventure continues.");
+            } else {
+                System.out.println("Invalid input. The door remains closed.");
+            }
+
+        } else {
+            System.out.println("Invalid input. Game over!");
+        }
+
+        scanner.close();
+    }
+}
